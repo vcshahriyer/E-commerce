@@ -2,10 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const multer = require("multer");
+const cors = require("cors");
+
 // image file storage path and unique name+extension config
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "./uploads/");
+    cb(null, "./public/images");
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname);
@@ -20,7 +22,7 @@ mongoose
   .catch((err) => console.error(err));
 
 // Middleware
-
+app.use(cors({ origin: true, credentials: true }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));

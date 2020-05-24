@@ -9,7 +9,7 @@ module.exports = {
       quantity: req.body.quantity,
       description: req.body.description,
       price: req.body.price,
-      image: req.file.path,
+      image: req.file.filename,
     });
 
     product
