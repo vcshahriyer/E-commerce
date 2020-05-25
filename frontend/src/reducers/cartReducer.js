@@ -58,7 +58,7 @@ export default function (state = initialState, action) {
       };
     case DELETE_CART_PRODUCT:
       const deletedItem = state.carts.filter(
-        (item) => item.id != action.payload
+        (item) => item.id !== action.payload
       );
       const priceAfterDel = deletedItem.map(
         (item) => item.quantity * item.price

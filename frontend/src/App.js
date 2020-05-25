@@ -1,10 +1,11 @@
 import React, { Fragment } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./assets/css/App.css";
 import ShopPage from "./components/shopPage";
 import CheckoutPage from "./components/checkoutPage";
+import SuccessPage from "./components/common/successPage";
 import { restoreOldCart } from "./actions/cartAction";
 import axios from "axios";
 axios.defaults.baseURL = "http://localhost:3000";
@@ -27,6 +28,7 @@ function App() {
         <Fragment>
           <Route exact path="/" component={ShopPage}></Route>
           <Route exact path="/checkout" component={CheckoutPage}></Route>
+          <Route exact path="/success" component={SuccessPage}></Route>
         </Fragment>
       </Router>
     </Provider>

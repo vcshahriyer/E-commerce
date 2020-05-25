@@ -2,9 +2,10 @@ import React, { useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import { connect } from "react-redux";
 import { addCartProduct } from "../../actions/cartAction";
-const ProductCard = ({ product, addCartProduct }) => {
+import { connect } from "react-redux";
+import _ from "lodash";
+const ProductCard = ({ product, addCartProduct, cart }) => {
   const onClick = useCallback(
     (e) => {
       e.preventDefault();
@@ -17,8 +18,9 @@ const ProductCard = ({ product, addCartProduct }) => {
       };
       addCartProduct(data);
     },
-    [product]
+    [product, addCartProduct]
   );
+  console.log(_.findIndex(cart, { id: product._id }));
 
   return (
     <figure className="product-card">
@@ -32,7 +34,11 @@ const ProductCard = ({ product, addCartProduct }) => {
         <div className="price">${product.price}</div>
       </figcaption>
       <span onClick={onClick}>
-        <FontAwesomeIcon icon={faCartPlus} />
+        {_.findIndex(cart, { id: product._id }) === -1 ? (
+          <FontAwesomeIcon icon={faCartPlus} />
+        ) : (
+          <FontAwesomeIcon icon={faCheckCircle} />
+        )}
       </span>
     </figure>
   );

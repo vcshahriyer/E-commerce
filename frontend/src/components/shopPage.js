@@ -21,7 +21,11 @@ class ShopPage extends Component {
             {products
               ? products.map((product, key) => {
                   return (
-                    <ProductCard key={key} product={product}></ProductCard>
+                    <ProductCard
+                      key={key}
+                      product={product}
+                      cart={carts}
+                    ></ProductCard>
                   );
                 })
               : null}

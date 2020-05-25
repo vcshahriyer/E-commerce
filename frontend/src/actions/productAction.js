@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_PRODUCTS } from "./types";
+import { GET_PRODUCTS, GET_ERRORS } from "./types";
 
 export const getProducts = (url = "/api/product/all") => (dispatch) => {
   axios
@@ -10,11 +10,10 @@ export const getProducts = (url = "/api/product/all") => (dispatch) => {
         payload: res.data.result,
       })
     )
-    .catch(
-      (err) => console.log(err)
-      //   dispatch({
-      //     type: GET_ERRORS,
-      //     payload: err.response.data.error,
-      //   })
+    .catch((err) =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.result,
+      })
     );
 };

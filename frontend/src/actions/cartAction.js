@@ -6,6 +6,7 @@ import {
   ADD_CART_PRODUCT_QTY,
   MINUS_CART_PRODUCT_QTY,
   EMPTY_CART,
+  GET_ERRORS,
 } from "./types";
 
 export const addCartProduct = (item) => (dispatch) => {
@@ -42,4 +43,18 @@ export const emptyCart = () => (dispatch) => {
   dispatch({
     type: EMPTY_CART,
   });
+};
+export const placeOrder = (data) => (dispatch) => {
+  axios
+    .post("/api/order/set", data)
+    .then((res) => {
+      dispatch({ type: EMPTY_CART });
+      window.location.href = "success";
+    })
+    .catch((err) =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data,
+      })
+    );
 };
