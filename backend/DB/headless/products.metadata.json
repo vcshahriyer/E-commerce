@@ -1,1 +1,1 @@
-{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"headless.products"}],"uuid":"ccafd9b3953847c797286e37ce65f96a"}
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"headless.products"}],"uuid":"5b10bb87e8a6401ea2ba8e402ce92a3d"}
