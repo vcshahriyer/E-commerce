@@ -9,8 +9,7 @@ class CheckoutPage extends Component {
     this.state = {};
   }
   render() {
-    const { carts } = this.props.cart;
-    console.log(carts);
+    const { carts, totalPrice } = this.props.cart;
     return (
       <Fragment>
         <h2>Please fill the Checkout Form</h2>
@@ -60,7 +59,7 @@ class CheckoutPage extends Component {
                   <i className="fa fa-shopping-cart"></i> <b>4</b>
                 </span>
               </h4>
-              <SideCart cart={carts}></SideCart>
+              <SideCart cart={carts} totalPrice={totalPrice}></SideCart>
             </div>
           </div>
         </div>

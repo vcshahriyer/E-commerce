@@ -5,7 +5,12 @@ import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { faMinusCircle } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
-import { deleteProduct, addQty, minusQty } from "../../actions/cartAction";
+import {
+  deleteProduct,
+  addQty,
+  minusQty,
+  emptyCart,
+} from "../../actions/cartAction";
 import { Link } from "react-router-dom";
 
 class SideCart extends Component {
@@ -22,7 +27,7 @@ class SideCart extends Component {
         <div className="cart-wrapper">
           <div className="cart-header">
             <h2>Your Cart</h2>{" "}
-            <span className="cart-empty-i">
+            <span onClick={this.props.emptyCart} className="cart-empty-i">
               <FontAwesomeIcon icon={faTrashAlt} />
             </span>
           </div>
@@ -76,4 +81,6 @@ class SideCart extends Component {
   }
 }
 
-export default connect(null, { deleteProduct, addQty, minusQty })(SideCart);
+export default connect(null, { deleteProduct, addQty, minusQty, emptyCart })(
+  SideCart
+);

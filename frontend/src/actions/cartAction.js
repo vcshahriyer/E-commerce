@@ -5,6 +5,7 @@ import {
   DELETE_CART_PRODUCT,
   ADD_CART_PRODUCT_QTY,
   MINUS_CART_PRODUCT_QTY,
+  EMPTY_CART,
 } from "./types";
 
 export const addCartProduct = (item) => (dispatch) => {
@@ -35,5 +36,10 @@ export const minusQty = (id) => (dispatch) => {
   dispatch({
     type: MINUS_CART_PRODUCT_QTY,
     payload: id,
+  });
+};
+export const emptyCart = () => (dispatch) => {
+  dispatch({
+    type: EMPTY_CART,
   });
 };

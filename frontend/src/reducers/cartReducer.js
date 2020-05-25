@@ -4,6 +4,7 @@ import {
   DELETE_CART_PRODUCT,
   ADD_CART_PRODUCT_QTY,
   MINUS_CART_PRODUCT_QTY,
+  EMPTY_CART,
 } from "../actions/types";
 
 const initialState = {
@@ -107,6 +108,14 @@ export default function (state = initialState, action) {
         ...state,
         carts: Mitems,
         totalPrice: mnsTotal,
+      };
+    case EMPTY_CART:
+      localStorage.setItem("cart", JSON.stringify([]));
+      localStorage.setItem("cartTotalPrice", JSON.stringify(0));
+      return {
+        ...state,
+        carts: [],
+        totalPrice: 0,
       };
     default:
       return state;

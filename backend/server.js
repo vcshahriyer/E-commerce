@@ -14,7 +14,21 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage }); // multipart form data library multer with config
+const upload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) => {
+    if (
+      file.mimetype == "image/png" ||
+      file.mimetype == "image/jpg" ||
+      file.mimetype == "image/jpeg"
+    ) {
+      cb(null, true);
+    } else {
+      cb(null, false);
+      return cb(new Error("Only .png, .jpg and .jpeg format allowed!"));
+    }
+  },
+}); // multipart form data library multer with config
 //Database connection
 mongoose
   .connect("mongodb://127.0.0.1:27017/headless", { useNewUrlParser: true })
