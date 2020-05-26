@@ -87,7 +87,7 @@ class CheckoutPage extends Component {
                 />
               </form>
               {!_.isEmpty(errors) ? (
-                <div className="alert">
+                <div className="alert danger">
                   <span className="closebtn" onClick={this.handleCloseBtn}>
                     &times;
                   </span>

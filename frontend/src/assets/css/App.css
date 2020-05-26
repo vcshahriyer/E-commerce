@@ -183,8 +183,13 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .alert {
   padding: 20px;
-  background-color: #f44336;
   color: white;
+}
+.danger {
+  background-color: #f44336;
+}
+.success {
+  background-color: #9abc66;
 }
 
 .closebtn {

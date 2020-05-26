@@ -6,6 +6,7 @@ import "./assets/css/App.css";
 import ShopPage from "./components/shopPage";
 import CheckoutPage from "./components/checkoutPage";
 import SuccessPage from "./components/common/successPage";
+import ProductUpload from "./components/productUpload";
 import { restoreOldCart } from "./actions/cartAction";
 import axios from "axios";
 axios.defaults.baseURL = "http://localhost:3000";
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/" component={ShopPage}></Route>
           <Route exact path="/checkout" component={CheckoutPage}></Route>
           <Route exact path="/success" component={SuccessPage}></Route>
+          <Route exact path="/addProduct" component={ProductUpload}></Route>
         </Fragment>
       </Router>
     </Provider>

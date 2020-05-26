@@ -40,6 +40,10 @@ node server.js
 npm start
 ```
 
+## Routes
+
+- Product add: http://localhost:3001/addProduct
+
 ## Dependency MongoDB, Node
 
 ```javascript

@@ -1,7 +1,8 @@
-import { GET_PRODUCTS } from "../actions/types";
+import { GET_PRODUCTS, ADD_PRODUCT } from "../actions/types";
 
 const initialState = {
   products: [],
+  uploadStatus: "",
 };
 
 export default function (state = initialState, action) {
@@ -10,6 +11,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         products: action.payload,
+      };
+    case ADD_PRODUCT:
+      return {
+        ...state,
+        uploadStatus: "success",
       };
     default:
       return state;

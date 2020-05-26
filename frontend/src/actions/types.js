@@ -6,3 +6,4 @@ export const ADD_CART_PRODUCT_QTY = "ADD_CART_PRODUCT_QTY";
 export const MINUS_CART_PRODUCT_QTY = "MINUS_CART_PRODUCT_QTY";
 export const EMPTY_CART = "EMPTY_CART";
 export const GET_ERRORS = "GET_ERRORS";
+export const ADD_PRODUCT = "ADD_PRODUCT";
