@@ -9,7 +9,7 @@ export default function (state = initialState, action) {
     case GET_ERRORS:
       return {
         ...state,
-        errors: action.payload.result,
+        errors: action?.payload?.result,
       };
     default:
       return state;
