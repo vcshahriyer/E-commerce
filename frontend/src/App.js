@@ -8,10 +8,6 @@ import CheckoutPage from "./components/checkoutPage";
 import SuccessPage from "./components/common/successPage";
 import ProductUpload from "./components/productUpload";
 import { restoreOldCart } from "./actions/cartAction";
-import axios from "axios";
-axios.defaults.baseURL = "http://localhost:3000";
-axios.defaults.headers.post["Content-Type"] =
-  "application/x-www-form-urlencoded";
 
 if (localStorage.cart) {
   store.dispatch(

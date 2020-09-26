@@ -12,6 +12,7 @@ import {
   emptyCart,
 } from "../../actions/cartAction";
 import { Link } from "react-router-dom";
+import { APIURL } from "../../config";
 
 class SideCart extends Component {
   constructor(props) {
@@ -35,10 +36,7 @@ class SideCart extends Component {
             ? carts.map((item, key) => {
                 return (
                   <div key={key} className="cart-product">
-                    <img
-                      src={`http://localhost:3000/images/${item.image}`}
-                      alt=""
-                    />
+                    <img src={`${APIURL}/images/${item.image}`} alt="" />
                     <p>
                       <span
                         onClick={() => this.props.minusQty(item.id)}

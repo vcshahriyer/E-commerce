@@ -5,6 +5,7 @@ import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import { addCartProduct } from "../../actions/cartAction";
 import { connect } from "react-redux";
 import _ from "lodash";
+import { APIURL } from "../../config";
 const ProductCard = ({ product, addCartProduct, cart }) => {
   const onClick = useCallback(
     (e) => {
@@ -24,10 +25,7 @@ const ProductCard = ({ product, addCartProduct, cart }) => {
 
   return (
     <figure className="product-card">
-      <img
-        src={`http://localhost:3000/images/${product.image}`}
-        alt="sample57"
-      />
+      <img src={`${APIURL}/images/${product.image}`} alt="sample57" />
       <figcaption>
         <h3>{product.name}</h3>
         <p>{product.description}</p>

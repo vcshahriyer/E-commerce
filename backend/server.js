@@ -50,5 +50,5 @@ app.post("/api/order/set", orderController.create);
 app.get("/api/product/all", productController.allProduct);
 
 // Start Server
-const port = process.env.PORT || 3000; // checking for dynamic port set.
+const port = process.env.PORT || 4000; // checking for dynamic port set.
 app.listen(port, () => console.log(`Listening on port ${port}....`));

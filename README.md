@@ -28,13 +28,19 @@ npm install
 
 ## Usage
 
-- cd into backend/ first and run
+- Run Both backend and frontend with single command => cd /backend and run the following command
+
+```bash
+npm run dev
+```
+
+- Run only backend => cd into backend/ and run
 
 ```bash
 node server.js
 ```
 
-- cd into frontend/ and run
+- Run only frontend => cd into frontend/ and run
 
 ```bash
 npm start
@@ -42,7 +48,7 @@ npm start
 
 ## Routes
 
-- Product add: http://localhost:3001/addProduct
+- Product add: http://localhost:3000/addProduct
 
 ## Dependency MongoDB, Node
 
@@ -50,5 +56,5 @@ npm start
 const express = require("express");
 const mongoose = require("mongoose");
 // Start Server
-const port = process.env.PORT || 3000; // checking for dynamic port set.
+const port = process.env.PORT || 4000; // checking for dynamic port set.
 ```
